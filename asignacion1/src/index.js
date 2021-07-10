@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Navbar } from './components/Navbar';
-import { Landing } from './Landing';
+//import { SignIn } from './SignIn';
+import { SignUp } from './SignUp';
+//import { Landing } from './Landing';
 
 
 
 
 ReactDOM.render(
-  <Navbar />,
+  <SignUp />,
   document.getElementById('root')
 );
 

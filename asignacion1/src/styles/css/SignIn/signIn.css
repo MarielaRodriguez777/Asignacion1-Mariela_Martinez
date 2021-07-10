@@ -98,3 +98,16 @@ p {
     background: #fff;
     padding: 0 15px;
   }
+
+
+  .formSignIn{
+    margin: 10%;
+  }
+
+  .member {
+    margin-top: 1rem
+  }
+
+  .formSignUp {
+    margin: 5%
+  }

@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    /*overflow: hidden;*/
 }
 
 
@@ -11,7 +10,7 @@ main{
     margin: auto;
 }
 main .banner{
-    background-image: url("/Maqueta/images/assests/pngtree-high-end-atmosphere-simple-wind-makeup-area-banner-image_194935\ 1.png");
+    background-image: url('../../../img/pngtree-high-end-atmosphere-simple-wind-makeup-area-banner-image_194935.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 580px;
@@ -89,4 +88,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.design{
+    border-right: 1px solid #333;
 }
