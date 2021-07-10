@@ -1,0 +1,27 @@
+.btn {
+    height: 40px;
+    padding: 0px 12px 0px 12px;
+    
+    border: none;
+    font-size: 18px;
+    background-color: #25CED1;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    color: white;
+    width: 100%;
+    margin-bottom:1rem;
+}
+.btn.btn-color {
+    border-color: #1dd0d3;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #1dd0d3 inset, 0 0 0 0 #1dd0d3;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 #1dd0d3 inset, 0 0 5px 2px #1dd0d3;
+}
+.btn:active{
+    background-color: #1dd0d3;
+    box-shadow: none;
+}

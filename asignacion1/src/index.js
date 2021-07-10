@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Navbar } from './components/Navbar';
 import { Landing } from './Landing';
 
 
 
+
 ReactDOM.render(
-  <Landing />,
+  <Navbar />,
   document.getElementById('root')
 );
 

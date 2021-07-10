@@ -1,0 +1,56 @@
+.header {
+    background-color: #25CED1;
+    color: #ffffff;
+    height: 50px;
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+        "logo   about   shopping    search  signUp     signIn" 
+    ;
+    justify-items: center;
+    align-items: center;
+}
+
+.header >img {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    grid-area: logo;
+    justify-self: center;
+}
+
+#about{
+    grid-area: about;
+    font-weight: bolder;
+
+}
+
+#shopping{
+    grid-area: shopping;
+    font-weight: bolder;
+}
+
+.header > input {
+    grid-area: search;
+    border-radius: .3rem;
+    height: 70%;
+    border:none;
+    outline: 0px;  
+    text-align: center;
+    
+}
+
+.header>input:focus {
+    box-shadow: 4px 2px 4px 0px #F99355;
+  }
+
+
+#signUp{
+    grid-area: signUp;
+}
+
+#signIn{
+    grid-area: signIn;
+}
+
