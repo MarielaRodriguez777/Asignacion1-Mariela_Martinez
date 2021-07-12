@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/css/Innecesary/header.css'
 import '../../styles/css/Innecesary/styles.css'
 
+
 export const Navbar = () => {
     return (
         <div>

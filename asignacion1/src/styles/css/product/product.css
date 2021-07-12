@@ -71,3 +71,8 @@
     border-radius: 1rem;
     border:black 1px solid
 }
+
+
+.contenido > div {
+    border-left: black solid 1px;
+}

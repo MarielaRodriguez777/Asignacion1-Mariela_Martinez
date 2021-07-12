@@ -51,7 +51,7 @@ main .contenido div .head-articles{
 main .contenido .new-articles .grid-articles{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 60px;
     justify-items: center;
     margin: auto 0;
 }
@@ -77,6 +77,8 @@ main .servicios .service-item{
     flex-direction: column;
     text-align: center;
     gap: 10px;
+    width: 10%;
+    font-weight: bolder;
 }
 
 footer{
@@ -86,7 +88,27 @@ footer{
     height: 100px;
     margin: auto;
     padding: 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10%;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.icono {
+    width: 70%;
+    height: 70%;
+}
+
+.size {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1%;
+    align-items: center;
+    justify-content: center;
 }
