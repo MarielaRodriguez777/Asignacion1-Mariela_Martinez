@@ -1,0 +1,178 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    border: 1px solid #333;
+    width: 90%;
+    margin: auto;
+    border-top: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.fas.fa-star{
+    color: rgb(240, 240, 4);
+}
+
+.fas.fa-star,
+.far.fa-star{
+    font-size: 30px;
+}
+
+.information{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 30px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+.information > img{
+    width: 300px;
+    height: 300px;
+    border: 1px #000 solid;
+    border-radius: 20px;
+}
+@media screen and (max-width:850px) {
+    .information > img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.information .description{
+    min-width: 300px;
+    border: 1px #000 solid;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+.information .description .info{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.information .description .info span{
+    color:gray;
+}
+.information .description .info h2{
+    margin: 0px;
+}
+.information .description .info p{
+    margin: 0px;
+}
+.information .description .botones{
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.calification{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px #000 solid;
+    box-sizing: border-box;
+}
+.average{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+.average span{
+    font-size: 28px;
+    font-weight: bold;
+}
+.average p{
+    font-size: 20px;
+}
+
+.line{
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 200px;
+    justify-content: center;
+    width: auto;
+}
+
+.line-item{
+    background-color: #000;
+    padding: 4px;
+    box-sizing: border-box;
+}
+.line-item5{width: 100%;}
+.line-item4{width: 80%;}
+.line-item3{width: 60%;}
+.line-item2{width: 40%;}
+.line-item1{width: 20%;}
+
+.star{
+    justify-self: stretch;
+}
+.star-porcentage .calification-stars > i{
+    font-size: 18px;
+}
+.star-porcentage{
+    display: flex;
+    gap: 8px;
+    max-width: 250px;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.commentary{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px #000 solid;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.commentary .commentary-header .commentary-title{
+    font-size: 24px;
+    font-weight: bold;
+}
+.commentary .commentary-main{
+    display: flex;
+    gap: 10px;
+}
+.commentary .commentary-main > .commentary-img > img{
+    width: 150px;
+    height: 150px;
+}
+.commentary .commentary-main .commentary-comment{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.commentary .commentary-main .commentary-comment > input{
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    
+}
+.commentary .commentary-main .commentary-comment > button{
+    align-self: flex-end;
+    width: 100px;
+}
