@@ -1,4 +1,4 @@
-.btn {
+.btn_sign {
     height: 40px;
     padding: 0px 12px 0px 12px;
     
@@ -10,18 +10,18 @@
     width: 100%;
     margin-bottom:1rem;
 }
-.btn.btn-color {
+.btn_sign.btn-color {
     border-color: #1dd0d3;
     color: #fff;
     box-shadow: 0 0 40px 40px #1dd0d3 inset, 0 0 0 0 #1dd0d3;
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
 }
-.btn:hover{
+.btn_sign:hover{
     cursor: pointer;
     box-shadow: 0 0 5px 0 #1dd0d3 inset, 0 0 5px 2px #1dd0d3;
 }
-.btn:active{
+.btn_sign:active{
     background-color: #1dd0d3;
     box-shadow: none;
 }

@@ -10,7 +10,7 @@ import { AuthRouter } from './AuthRouter';
 export const AppRouter = () => {
     return (
         <Router>
-            <div>
+            <>
                 <Switch>
                     <Route 
                         path="/screens" 
@@ -23,7 +23,7 @@ export const AppRouter = () => {
                         component={Landing}
                     />
                 </Switch>
-            </div>
+            </>
 
         </Router>
     )

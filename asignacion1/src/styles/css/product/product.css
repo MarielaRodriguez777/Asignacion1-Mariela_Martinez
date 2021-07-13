@@ -73,6 +73,6 @@
 }
 
 
-.contenido > div {
-    border-left: black solid 1px;
+.contenido > .filter {
+    border-right: black solid 1px;
 }

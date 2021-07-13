@@ -1,16 +1,15 @@
 *{
     margin: 0;
     padding: 0;
-    /*overflow: hidden;*/
 }
 
 
-main{
+.main_main{
     border: 1px solid #333;
     width: 90%;
     margin: auto;
 }
-main .banner{
+.main_main .banner{
     background-image: url('../../../img/pngtree-high-end-atmosphere-simple-wind-makeup-area-banner-image_194935.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -20,7 +19,7 @@ main .banner{
     justify-content: center;
     align-items: center;
 }
-main .banner p{
+.main_main .banner p{
     text-align: center;
     width: 70%;
     color: #fff;
@@ -28,12 +27,12 @@ main .banner p{
     font-size: 1.5em;
 }
 
-main .contenido{
+.main_main .contenido{
     display: flex;
 }
 
-main .contenido .new-articles ,
-main .contenido .best-articles{
+.main_main .contenido .new-articles ,
+.main_main .contenido .best-articles{
     width: 50%;
     padding: 20px 12px;
     gap: 20px;
@@ -42,13 +41,13 @@ main .contenido .best-articles{
 }
 
 
-main .contenido div .head-articles{
+.main_main .contenido div .head-articles{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-main .contenido .new-articles .grid-articles{
+.main_main .contenido .new-articles .grid-articles{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
@@ -56,7 +55,7 @@ main .contenido .new-articles .grid-articles{
     margin: auto 0;
 }
 
-main .contenido .best-articles .grid-articles{
+.main_main .contenido .best-articles .grid-articles{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -64,7 +63,7 @@ main .contenido .best-articles .grid-articles{
     margin: auto 0;
 }
 
-main .servicios{
+.main_main .servicios{
     border-top: 1px solid #333;
     display: flex;
     padding: 20px;
@@ -72,7 +71,7 @@ main .servicios{
     justify-content: space-evenly;
 }
 
-main .servicios .service-item{
+.main_main .servicios .service-item{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -111,4 +110,8 @@ footer{
     gap: 1%;
     align-items: center;
     justify-content: center;
+}
+
+.linea{
+    border-right: 1px solid;
 }

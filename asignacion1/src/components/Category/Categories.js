@@ -5,7 +5,7 @@ import '../../styles/css/category/category.css'
 export const Categories = () => {
     return (
         <div>
-            <main>
+            <main className="main_main" >
                 <div className="all-category">
                     <span>
                         <h1 className="espaciado" >All categories</h1>

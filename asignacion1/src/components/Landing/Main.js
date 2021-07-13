@@ -1,16 +1,17 @@
 import React from 'react'
+import '../../styles/css/index/index.css'
 
 
 export const Main = () => {
     return (
         <div>
-            <main>
+            <main className="main_main">
                 <div className="container">
                     <div className="banner">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia nihil ex totam quidem quaerat error esse dolorum facere doloribus blanditiis?</p>
                     </div>
                     <div className="contenido">
-                        <div className="new-articles design">
+                        <div className="new-articles design linea">
                             <div className="head-articles">
                                 <span>New Articles</span>
                                 <a href="url">See more</a>

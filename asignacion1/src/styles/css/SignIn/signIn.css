@@ -1,4 +1,4 @@
-html, body {
+.body_Sign {
 
     margin: 0;
     background: linear-gradient(to bottom, #25CED1, white);
@@ -72,16 +72,16 @@ html, body {
 }
 
 
-p {
+.p-size {
     font: 15px sans-serif;
     margin: 20px 0px;
     text-align: center;
   }
-  p.linea {
+  .p-size.linea {
     position: relative;
     z-index: 1;
   }
-  p.linea:before {
+  .p-size.linea:before {
     border-top: 2px solid rgb(165, 163, 163);
     content: "";
     margin: 0 auto;
@@ -93,7 +93,7 @@ p {
     width: 95%;
     z-index: -1;
   }
-  p.linea span {
+  .p-size.linea span {
   
     background: #fff;
     padding: 0 15px;

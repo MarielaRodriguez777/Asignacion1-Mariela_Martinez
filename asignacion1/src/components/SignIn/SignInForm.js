@@ -6,6 +6,8 @@ import '../../styles/css/SignIn/social-btn.css'
 
 export const SignInForm = () => {
     return (
+        <body className="body_Sign" >
+
         <div className="div_centrado">
             <div className="box_container">
                 <form className="formSignIn" >
@@ -16,10 +18,10 @@ export const SignInForm = () => {
                     <div>
                         <input className="auth_input" type="text" name="username" id="username" placeholder="Username" />
                         <input className="auth_input" type="password" name="password" id="password" placeholder="Password" />
-                        <button type="submit" className="btn">Sign In</button>
+                        <button type="submit" className="btn_sign">Sign In</button>
                     </div>
                     <div>
-                        <p className="linea"><span>Or</span></p>
+                        <p className="p-size linea"><span>Or</span></p>
                         <button className="social-signin facebook">Log in with facebook</button>
                         <button className="social-signin google">Log in with Google+</button>
                     </div>
@@ -29,5 +31,6 @@ export const SignInForm = () => {
                 </form>
             </div>
         </div>
+        </body>
     )
 }

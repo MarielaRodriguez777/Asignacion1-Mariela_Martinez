@@ -9,7 +9,7 @@ import { SignUp } from '../screens/SignUp'
 
 export const AuthRouter = () => {
     return (
-            <div>
+            <>
                 <Switch>
                     <Route
                         exact
@@ -43,7 +43,7 @@ export const AuthRouter = () => {
                     />
                     <Redirect to="/screens/landing" />
                 </Switch>
-            </div>
+            </>
         
     )
 }

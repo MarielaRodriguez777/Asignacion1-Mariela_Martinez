@@ -9,7 +9,7 @@ import '../../styles/css/index/index.css'
 export const Product = () => {
     return (
         <div>
-            <main>
+            <main className="main_main">
 
                 <div className="container">
                     <div className="contenido">
