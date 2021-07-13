@@ -13,7 +13,7 @@ export const Main = () => {
                         <div className="new-articles design">
                             <div className="head-articles">
                                 <span>New Articles</span>
-                                <a href="#">See more</a>
+                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 <img src={`./images/assests/best1 1.png`} alt="" />
@@ -27,7 +27,7 @@ export const Main = () => {
                         <div className="best-articles">
                             <div className="head-articles">
                                 <span>Best Highers</span>
-                                <a href="#">See more</a>
+                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 <img src={`./images/assests/best1 1.png`} alt="" />
@@ -38,7 +38,7 @@ export const Main = () => {
 
                             <div className="head-articles">
                                 <span>Offers</span>
-                                <a href="#">See more</a>
+                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 <img src={`./images/assests/best1 1.png`} alt="" />
@@ -50,19 +50,19 @@ export const Main = () => {
                     </div>
                     <div className="servicios">
                         <div className="service-item">
-                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcset="" />
+                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcSet="" />
                             <span>Calidad y buen precio</span>
                         </div>
                         <div className="service-item">
-                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcset="" />
+                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcSet="" />
                             <span>Pago seguro</span>
                         </div>
                         <div className="service-item">
-                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcset="" />
+                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcSet="" />
                             <span>Compra con confianza</span>
                         </div>
                         <div className="service-item">
-                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcset="" />
+                            <img src={`./images/assests/Ellipse 4.svg`} alt="" srcSet="" />
                             <span>Servicio al cliente</span>
                         </div>
                     </div>

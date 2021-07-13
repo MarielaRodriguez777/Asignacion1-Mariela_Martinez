@@ -10,7 +10,7 @@ export const Navbar = () => {
                 <img src={`./images/appland.png`} alt=""/>
                 <p id="about">About Us</p>
                 <p id="shopping">Shopping</p>
-                <input type="search" value="" placeholder="&#xf002; Search" id="icon" />
+                <input type="search" defaultValue="" placeholder="&#xf002; Search" id="icon" />
                 <button type="submit" id="signUp" className="btn btn-color">Sign Up</button>
                 <button type="submit" id="signIn" className="btn btn-color">Sign In</button>
             </header>

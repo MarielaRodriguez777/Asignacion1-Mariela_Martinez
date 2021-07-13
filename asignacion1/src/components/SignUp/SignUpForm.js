@@ -11,7 +11,7 @@ export const SignUpForm = () => {
             <div className="box_container">
                 <form className="formSignUp" >
                     <div>
-                        <img className="image" src="./images/appland.png" />
+                        <img className="image" src={`./images/appland.png`} alt="logo" />
                         <h1 className="space">Sign Up</h1>
                     </div>
                     <div>

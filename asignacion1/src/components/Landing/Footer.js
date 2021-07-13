@@ -2,7 +2,6 @@ import React from 'react'
 
 import '../../styles/css/index/index.css'
 import '../../styles/css/Innecesary/styles.css'
-
 export const Footer = () => {
     return (
         <div>
@@ -34,22 +33,22 @@ export const Footer = () => {
                 <div>
                     <div className="size">
                         <span>
-                            <a href="http://facebook.com" target="_blank">
+                            <a href="http://facebook.com" target="_blank" rel="noreferrer">
                                 <img className="icono" src={`./images/iconos/facebook.svg`} alt="facebook" />
                             </a>
                         </span>
                         <span>
-                            <a href="http://twitter.com" target="_blank">
+                            <a href="http://twitter.com" target="_blank" rel="noreferrer">
                                 <img className="icono" src={`./images/iconos/gorjeo.svg`} alt="twitter" />
                             </a>
                         </span>
                         <span>
-                            <a href="http://instagram.com" target="_blank">
+                            <a href="http://instagram.com" target="_blank" rel="noreferrer">
                                 <img className="icono" src={`./images/iconos/instagram.svg`} alt="instagram" />
                             </a>
                         </span>
                         <span>
-                            <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <a href="http://linkedin.com" target="_blank" rel="noreferrer">
                                 <img className="icono" src={`./images/iconos/linkedin.svg`} alt="linkedin" />
                             </a>
                         </span>

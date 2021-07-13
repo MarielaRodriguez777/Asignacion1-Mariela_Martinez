@@ -22,10 +22,10 @@ export const Product = () => {
                                             <h4>Category:</h4>
                                         </span>
                                         <select name="select">
-                                            <option value="">Elige una opción</option>
-                                            <option value="value1">Value 1</option>
-                                            <option value="value2">Value 2</option>
-                                            <option value="value3">Value 3</option>
+                                            <option defaultValue="">Elige una opción</option>
+                                            <option defaultValue="value1">Value 1</option>
+                                            <option defaultValue="value2">Value 2</option>
+                                            <option defaultValue="value3">Value 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -37,10 +37,10 @@ export const Product = () => {
                                         <h4>Order:</h4>
                                     </span>
                                     <select name="select">
-                                        <option value="">Elige una opción</option>
-                                        <option value="value1">Higher</option>
-                                        <option value="value2">Less</option>
-                                        <option value="value3"></option>
+                                        <option defaultValue="">Elige una opción</option>
+                                        <option defaultValue="value1">Higher</option>
+                                        <option defaultValue="value2">Less</option>
+                                        <option defaultValue="value3"></option>
                                     </select>
                                 </div>
                                 <div className="inline"> 
@@ -58,49 +58,49 @@ export const Product = () => {
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                                 <div className="tarjet">
                                     <img className="product-image" src={`./images/new article five.jpg`} alt="" />
                                     <h3>Name Product</h3>
                                     <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="#">See more</a>
+                                    <a href="url">See more</a>
                                 </div>
                             </div>
                             <div>

@@ -10,7 +10,7 @@ export const SignInForm = () => {
             <div className="box_container">
                 <form className="formSignIn" >
                     <div>
-                        <img className="image" src="./images/appland.png"/>
+                        <img className="image" src={`./images/appland.png`} alt="logo" />
                         <h1 className="space">Sign In</h1>
                     </div>
                     <div>
@@ -24,7 +24,7 @@ export const SignInForm = () => {
                         <button className="social-signin google">Log in with Google+</button>
                     </div>
                     <div className="member" >
-                        <a href="">Not a member? Sign Up</a>
+                        <a href="url">Not a member? Sign Up</a>
                     </div>
                 </form>
             </div>
