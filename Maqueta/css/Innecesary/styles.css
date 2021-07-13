@@ -29,3 +29,9 @@ html, body {
     box-shadow: none;
 }
 
+.btn.btn-primary {
+    background-color: #F99355;
+    color: #fff;
+    height: 30px;
+    font-size: 14px;
+}
