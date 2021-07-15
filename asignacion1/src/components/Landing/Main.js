@@ -11,7 +11,7 @@ export const Main = () => {
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia nihil ex totam quidem quaerat error esse dolorum facere doloribus blanditiis?</p>
                     </div>
                     <div className="contenido">
-                        <div className="new-articles design linea">
+                        <div className="new-articles design lineas">
                             <div className="head-articles">
                                 <span>New Articles</span>
                                 <a href="url">See more</a>
