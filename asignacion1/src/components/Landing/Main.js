@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../styles/css/index/index.css'
-import { Banner } from './Banner'
 
 
 export const Main = () => {
@@ -9,7 +8,6 @@ export const Main = () => {
             <main className="main_main">
                 <div className="container">
                     <div className="banner">
-                        <Banner />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia nihil ex totam quidem quaerat error esse dolorum facere doloribus blanditiis?</p>
                     </div>
                     <div className="contenido">

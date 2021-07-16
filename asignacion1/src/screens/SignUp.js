@@ -7,7 +7,8 @@ import '../styles/css/SignIn/social-btn.css'
 export const SignUp = ({history}) => {
 
 
-    const handleSignUp = () => {
+    const handleSignUp = (e) => {
+        e.preventDefault();
         history.replace('/');
     }
 
@@ -16,7 +17,7 @@ export const SignUp = ({history}) => {
         <div className="body_Sign">
             <div className="div_centrado">
                 <div className="box_container">
-                    <form className="formSignUp" >
+                    <form className="formSignUp" onSubmit={handleSignUp} >
                         <div>
                             <img className="image" src={`./images/appland.png`} alt="logo" />
                             <h1 className="space">Sign Up</h1>

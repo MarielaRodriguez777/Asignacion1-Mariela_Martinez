@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { Category } from '../screens/Category'
 import { EspecificProduct } from '../screens/EspecificProduct'
@@ -7,19 +7,35 @@ import { ProductPage } from '../screens/ProductPage'
 import { SignIn } from '../screens/SignIn'
 import { SignUp } from '../screens/SignUp'
 
+import { PublicRouters } from './PublicRouters'
+import { PrivateRouters } from './PrivateRouters'
+import { useSelector } from 'react-redux'
+
 export const AuthRouter = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const state = useSelector(state => state?.auth)
+
+    useEffect(() => {
+        if(state?.uid){
+            setIsLoggedIn(true);
+        }else{
+            setIsLoggedIn(false);
+        }
+    }, [state])
     return (
-            <>
+        <>
                 <Switch>
-                    <Route
+                    <PublicRouters
                         exact
                         path="/screens/signIn"
                         component={SignIn}
+                        isAuthenticated={isLoggedIn}
                     />
-                    <Route
+                    <PublicRouters
                         exact
                         path="/screens/signUp"
                         component={SignUp}
+                        isAuthenticated={isLoggedIn}
                     />
                     <Route
                         exact
@@ -31,10 +47,11 @@ export const AuthRouter = () => {
                         path="/screens/landing"
                         component={Landing}
                     />
-                    <Route
+                    <PrivateRouters
                         exact
                         path="/screens/especificProduct"
                         component={EspecificProduct}
+                        isAuthenticated={isLoggedIn}
                     />
                     <Route
                         exact

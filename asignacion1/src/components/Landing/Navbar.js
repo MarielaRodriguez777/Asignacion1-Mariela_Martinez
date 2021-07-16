@@ -1,10 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { startLogout } from '../../action/auth';
+
 import '../../styles/css/Innecesary/header.css'
 import '../../styles/css/Innecesary/styles.css'
 
 
 export const Navbar = () => {
+    const dispatch = useDispatch();
+    const state = useSelector(state => state?.auth)
+    
+    const handleLogout = () => {
+        dispatch( startLogout() )
+    }
     return (
         <div>
             <header>
@@ -16,7 +25,7 @@ export const Navbar = () => {
                 
                     <NavLink
                         exact
-                        to="/"
+                        to="/screens/especificProduct"
                     >
                         <p id="about">About Us</p>
                     </NavLink>
@@ -33,20 +42,25 @@ export const Navbar = () => {
 
 
                     <div id="sign">
-
-                    <NavLink
-                        exact
-                        to="/screens/signUp"
-                    >
-                        <button type="submit" id="signUp" className="btn btn-color">Sign Up</button>
-                    </NavLink>
-
-                    <NavLink
-                        exact
-                        to="/screens/signIn"
-                    >
-                        <button type="submit" id="signIn" className="btn btn-color">Sign In</button>
-                    </NavLink>
+                        {!state?.name
+                            ? <>
+                                <NavLink
+                                    exact
+                                    to="/screens/signUp"
+                                >
+                                    <button type="submit" id="signUp" className="btn btn-color">Sign Up</button>
+                                </NavLink>
+                                <NavLink
+                                    exact
+                                    to="/screens/signIn"
+                                >
+                                    <button type="submit" id="signIn" className="btn btn-color">Sign In</button>
+                                </NavLink>
+                            </>
+                            :<>
+                                <button id="logOut" className="btn btn-color" onClick={handleLogout}>LogOut</button>
+                            </>
+                        }
                     </div>
                     
                 

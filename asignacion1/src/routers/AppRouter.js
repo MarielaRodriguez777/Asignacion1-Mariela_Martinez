@@ -1,30 +1,40 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  } from "react-router-dom";
-import { Landing } from '../screens/Landing';
-import { AuthRouter } from './AuthRouter';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar } from "../components/Landing/Navbar";
+import { AuthRouter } from "./AuthRouter";
 
-export const AppRouter = () => {
+import { useDispatch } from 'react-redux'
+import { firebase } from "../firebase/firebase-config";
+import { login } from "../action/auth";
+
+export const AppRouter = () => {    
+    const dispatch = useDispatch();
+
+    const [cheking, setCheking] = useState(true);
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user?.uid) {
+                dispatch(login(user.uid, user.displayName, user.photoURL));
+            }
+            setCheking(false);
+        });
+    }, [dispatch, setCheking]);
+    /* console.log(cheking) */
+
+    if (cheking) {
+        return <h1>Espere...</h1>;
+    }
     return (
         <Router>
+            <Navbar />
             <>
                 <Switch>
-                    <Route 
-                        path="/screens"
-                        component={AuthRouter}
-                    />
+                    <Route exact path="/screens" component={AuthRouter} />
 
-                    <Route
-                        exact 
-                        path="/" 
-                        component={Landing}
-                    />
+                    <Route path="/" component={AuthRouter} />
                 </Switch>
             </>
-
         </Router>
-    )
-}
+    );
+};

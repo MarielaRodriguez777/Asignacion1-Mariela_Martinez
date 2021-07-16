@@ -1,24 +1,33 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../auth/AuthContext'
+import React from 'react'
+import { useHistory } from "react-router-dom";
+
+import { useDispatch } from "react-redux"
+import { startGoogleLogin } from '../action/auth';
+
 import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
-import { types } from '../types/types'
 
-export const SignIn = ({history}) => {
 
-    const {dispatch} = useContext( AuthContext );
+export const SignIn = () => {
+    let history = useHistory();
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
 
     const handleSignIn = () => {
-
-        dispatch({
-            type: types.signIn,
-            payload: {
-                name: 'Mariela'
-            }
-        })
-
+        
         history.replace('/');
+    }
+    const handleSignInGoogle = () => {
+        dispatch( startGoogleLogin() );
+    }
+
+    const handleSignInFacebook = () => {
+        /* dispatch( startFacebookLogin() ); */
+        console.log('hola facebook')
     }
 
     return (
@@ -26,7 +35,7 @@ export const SignIn = ({history}) => {
 
             <div className="div_centrado">
                 <div className="box_container">
-                    <form className="formSignIn" >
+                    <form className="formSignIn" onSubmit={handleSubmit} >
                         <div>
                             <img className="image" src={`./images/appland.png`} alt="logo" />
                             <h1 className="space">Sign In</h1>
@@ -38,8 +47,8 @@ export const SignIn = ({history}) => {
                         </div>
                         <div>
                             <p className="p-size linea"><span>Or</span></p>
-                            <button className="social-signin facebook">Log in with facebook</button>
-                            <button className="social-signin google">Log in with Google+</button>
+                            <button className="social-signin facebook" onClick={handleSignInFacebook}>Log in with facebook</button>
+                            <button className="social-signin google" onClick={handleSignInGoogle}>Log in with Google+</button>
                         </div>
                         <div className="member" >
                             <a href="url">Not a member? Sign Up</a>

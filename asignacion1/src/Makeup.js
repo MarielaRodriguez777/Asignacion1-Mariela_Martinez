@@ -1,22 +1,17 @@
-import React, { useReducer } from 'react'
-import { AuthContext } from './auth/AuthContext'
-import { authReducer } from './auth/authReducer';
-import { AppRouter } from './routers/AppRouter'
+import React from 'react'
+import { Provider } from 'react-redux'
 
-const init = () => {
-    return JSON.parse(localStorage.getItem('user')) || {logged: false};
-}
+import { AppRouter } from './routers/AppRouter'
+import { store } from './store/store'
 
 
 export const Makeup = () => {
     
-    const [user, dispatch] = useReducer(authReducer, {}, init);
-
     return (
 
-        <AuthContext.Provider value={{user, dispatch}}>
+        <Provider store={ store } >
             <AppRouter />
-        </AuthContext.Provider>
+        </Provider>
 
     )
 }
