@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../auth/AuthContext'
 import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
+import { types } from '../types/types'
 
 export const SignIn = ({history}) => {
 
+    const {dispatch} = useContext( AuthContext );
+
     const handleSignIn = () => {
+
+        dispatch({
+            type: types.signIn,
+            payload: {
+                name: 'Mariela'
+            }
+        })
+
         history.replace('/');
     }
 

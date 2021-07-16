@@ -12,6 +12,8 @@ html, body {
     font-size: 18px;
     background-color: #F99355;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    margin: 0rem 0.5rem;
+    width: 10rem
 }
 .btn.btn-color {
     border-color: #f88944;

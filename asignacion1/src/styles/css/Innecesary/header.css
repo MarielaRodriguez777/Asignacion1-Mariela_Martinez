@@ -6,7 +6,7 @@
     display: grid;
     gap: 20px;
     grid-template-areas: 
-        "logo   about   shopping    search  signUp     signIn" 
+        "logo   about   shopping    search  sign" 
     ;
     justify-items: center;
     align-items: center;
@@ -47,10 +47,7 @@
 
 
 #signUp{
-    grid-area: signUp;
+    grid-area: sign;
 }
 
-#signIn{
-    grid-area: signIn;
-}
 

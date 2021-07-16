@@ -30,7 +30,10 @@ export const Navbar = () => {
                     </NavLink>
                     
                     <input type="search" defaultValue="" placeholder="&#xf002; Search" id="icon" />
-                    
+
+
+                    <div id="sign">
+
                     <NavLink
                         exact
                         to="/screens/signUp"
@@ -44,6 +47,8 @@ export const Navbar = () => {
                     >
                         <button type="submit" id="signIn" className="btn btn-color">Sign In</button>
                     </NavLink>
+                    </div>
+                    
                 
                     
                     

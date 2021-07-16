@@ -4,7 +4,14 @@ import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
 
-export const SignUp = () => {
+export const SignUp = ({history}) => {
+
+
+    const handleSignUp = () => {
+        history.replace('/');
+    }
+
+
     return (
         <div className="body_Sign">
             <div className="div_centrado">
@@ -18,7 +25,7 @@ export const SignUp = () => {
                             <input className="auth_input" type="email" name="email" id="email" placeholder="Email" />
                             <input className="auth_input" type="password" name="password" id="password" placeholder="Password" />
                             <input className="auth_input" type="password" name="repeat password" id="repeatPassword" placeholder="Repeat Password" />
-                            <button type="submit" className="btn_sign">Sign Up</button>
+                            <button type="submit" className="btn_sign" onClick={handleSignUp}>Sign Up</button>
                         </div>
                         <div>
                             <p className="p-size linea"><span>Or</span></p>
