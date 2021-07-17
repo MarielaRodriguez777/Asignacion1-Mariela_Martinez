@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { Navbar } from "../components/Landing/Navbar";
 import { AuthRouter } from "./AuthRouter";
 
 import { useDispatch } from 'react-redux'
 import { firebase } from "../firebase/firebase-config";
 import { login } from "../action/auth";
+import { Loading } from "../components/loading/Loading";
 
-export const AppRouter = () => {    
+export const AppRouter = () => {  
+
     const dispatch = useDispatch();
 
     const [cheking, setCheking] = useState(true);
@@ -23,8 +25,14 @@ export const AppRouter = () => {
     /* console.log(cheking) */
 
     if (cheking) {
-        return <h1>Espere...</h1>;
+        return (
+            <>
+                    <Loading />;
+            </>
+        ) 
+            
     }
+
     return (
         <Router>
             <Navbar />

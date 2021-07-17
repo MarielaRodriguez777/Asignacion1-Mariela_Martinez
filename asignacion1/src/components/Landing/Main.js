@@ -1,5 +1,7 @@
 import React from 'react'
 import '../../styles/css/index/index.css'
+import '../../styles/css/Innecesary/main.css'
+import {Banner} from './Banner'
 
 
 export const Main = () => {
@@ -7,13 +9,13 @@ export const Main = () => {
         <div>
             <main className="main_main">
                 <div className="container">
-                    <div className="banner">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia nihil ex totam quidem quaerat error esse dolorum facere doloribus blanditiis?</p>
-                    </div>
+                    
+                        <Banner />
+                    
                     <div className="contenido">
                         <div className="new-articles design lineas">
                             <div className="head-articles">
-                                <span>New Articles</span>
+                                <span className="bold">New Articles</span>
                                 <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
@@ -27,7 +29,7 @@ export const Main = () => {
                         </div>
                         <div className="best-articles">
                             <div className="head-articles">
-                                <span>Best Highers</span>
+                                <span className="bold">Best Highers</span>
                                 <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
@@ -38,7 +40,7 @@ export const Main = () => {
                             </div>
 
                             <div className="head-articles">
-                                <span>Offers</span>
+                                <span className="bold">Offers</span>
                                 <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">

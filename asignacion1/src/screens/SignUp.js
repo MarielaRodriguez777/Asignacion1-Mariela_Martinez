@@ -3,6 +3,7 @@ import React from 'react'
 import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
+import '../styles/css/Innecesary/styles.css'
 
 export const SignUp = ({history}) => {
 
@@ -23,9 +24,9 @@ export const SignUp = ({history}) => {
                             <h1 className="space">Sign Up</h1>
                         </div>
                         <div>
-                            <input className="auth_input" type="email" name="email" id="email" placeholder="Email" />
-                            <input className="auth_input" type="password" name="password" id="password" placeholder="Password" />
-                            <input className="auth_input" type="password" name="repeat password" id="repeatPassword" placeholder="Repeat Password" />
+                            <input className="auth_input icono" type="email" name="email" id="email" placeholder="&#xf0e0;  Email" />
+                            <input className="auth_input icono" type="password" name="password" id="password" placeholder="&#xf023;  Password" />
+                            <input className="auth_input icono" type="password" name="repeat password" id="repeatPassword" placeholder="&#xf023;   Repeat Password" />
                             <button type="submit" className="btn_sign" onClick={handleSignUp}>Sign Up</button>
                         </div>
                         <div>

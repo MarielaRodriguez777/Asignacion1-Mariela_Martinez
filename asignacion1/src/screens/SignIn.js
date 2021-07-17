@@ -7,6 +7,7 @@ import { startGoogleLogin } from '../action/auth';
 import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
+import '../styles/css/Innecesary/styles.css'
 
 
 export const SignIn = () => {
@@ -41,8 +42,8 @@ export const SignIn = () => {
                             <h1 className="space">Sign In</h1>
                         </div>
                         <div>
-                            <input className="auth_input" type="text" name="username" id="username" placeholder="Username" />
-                            <input className="auth_input" type="password" name="password" id="password" placeholder="Password" />
+                            <input className="auth_input icono" type="text" name="username" id="username" placeholder="&#xf007;  Username"/>
+                            <input className="auth_input icono" type="password" name="password" id="password" placeholder="&#xf023;  Password"/>
                             <button type="button" className="btn_sign" onClick={handleSignIn}>Sign In</button>
                         </div>
                         <div>

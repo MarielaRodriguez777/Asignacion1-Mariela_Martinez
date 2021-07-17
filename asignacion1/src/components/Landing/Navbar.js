@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from '../../action/auth';
 
@@ -8,6 +8,10 @@ import '../../styles/css/Innecesary/styles.css'
 
 
 export const Navbar = () => {
+
+    let history = useHistory();
+    console.log(history.location.pathname);
+
     const dispatch = useDispatch();
     const state = useSelector(state => state?.auth)
     
@@ -15,7 +19,13 @@ export const Navbar = () => {
         dispatch( startLogout() )
     }
     return (
-        <div>
+        <>
+        {
+            history.location.pathname==="/screens/signUp" || history.location.pathname==="/screens/signIn"
+            ?
+            <>
+            </>
+            :
             <header>
 
                 <nav className="header">
@@ -38,7 +48,7 @@ export const Navbar = () => {
                         <p id="shopping">Shopping</p>
                     </NavLink>
                     
-                    <input type="search" defaultValue="" placeholder="&#xf002; Search" id="icon" />
+                    <input type="search" defaultValue="" placeholder="&#xf002; Search" id="icon" className="icono" />
 
 
                     <div id="sign">
@@ -69,6 +79,8 @@ export const Navbar = () => {
                 </nav>
                 
             </header>
-        </div>
+        }
+            
+        </>
     )
 }

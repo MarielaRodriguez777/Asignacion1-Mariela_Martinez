@@ -10,18 +10,26 @@
     margin: auto;
 }
 .main_main .banner {
-    background-size: 100% 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
-    height: 580px;
-    padding: 40px;
+    height: 87vh;
+    width: 100%;
+    padding:0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: black 1px solid;
 }
-.main_main .banner p{
+
+.banner>img {
+    size: 100%;
+    height: 62%;
+}
+
+.main_main .banner> p{
     text-align: center;
     width: 70%;
-    color: #fff;
+    color: black;
     font-weight: bold;
     font-size: 1.5em;
 }
@@ -96,6 +104,8 @@ footer{
 
 .bold {
     font-weight: bolder;
+    font-size: larger;
+    font-family: cursive;
 }
 
 .icono {

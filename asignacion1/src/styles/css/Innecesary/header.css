@@ -37,7 +37,8 @@
     height: 70%;
     border:none;
     outline: 0px;  
-    text-align: center;
+    text-align: left;
+    padding: 1rem;
     
 }
 
@@ -48,6 +49,13 @@
 
 #signUp{
     grid-area: sign;
+}
+
+
+.header>a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 

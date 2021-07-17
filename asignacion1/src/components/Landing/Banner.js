@@ -1,30 +1,24 @@
-import React from 'react'
-import SimpleImageSlider from "react-simple-image-slider";
-import image from '../../img/slider.jpg'
-
-const images = [
-  { url: image },
-  { url: image },
-  { url: image },
-  { url: image },
-  { url: image },
-  { url: image },
-  { url: image },
-];
+import React from 'react';
+import Carousel from 'nuka-carousel';
+import '../../styles/css/index/index.css'
 
 
-export const Banner = () => {
-  return (
-    <div>
-      <SimpleImageSlider
-        position='absolute'
-        width= '100%'
-        height='100%'
-        images={images}
-        showBullets={true}
-        showNavs={true}
-      />
-    </div>
-  );
+export class Banner extends React.Component{
+
+  render() {
+    return (
+      <div className="banner">
+        <Carousel style={{height:"87vh", width:"100%"}}>
+          <img style={{height:"87vh"}} src={`./images/slider/slider.jpg`} alt="slider"/>
+          <img style={{height:"87vh"}} src={`./images/slider/banner.jpg`} alt="slider"/>
+          <img style={{height:"87vh"}} src={`./images/slider/slider1.jpg`} alt="slider"/>
+          <img style={{height:"87vh"}} src={`./images/slider/slider.jpg`} alt="slider"/>
+          <img style={{height:"87vh"}} src={`./images/slider/slider.jpg`} alt="slider"/>
+          <img style={{height:"87vh"}} src={`./images/slider/slider.jpg`} alt="slider"/>
+        </Carousel>
+
+      </div>
+    );
+  }
 }
 
