@@ -8,7 +8,7 @@ import { SignIn } from '../screens/SignIn'
 import { SignUp } from '../screens/SignUp'
 
 import { PublicRouters } from './PublicRouters'
-import { PrivateRouters } from './PrivateRouters'
+//import { PrivateRouters } from './PrivateRouters'
 import { useSelector } from 'react-redux'
 
 export const AuthRouter = () => {
@@ -47,9 +47,9 @@ export const AuthRouter = () => {
                         path="/screens/landing"
                         component={Landing}
                     />
-                    <PrivateRouters
+                    <Route
                         exact
-                        path="/screens/especificProduct"
+                        path="/screens/especificProduct/:idProducto"
                         component={EspecificProductPage}
                         isAuthenticated={isLoggedIn}
                     />

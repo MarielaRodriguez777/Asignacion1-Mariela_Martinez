@@ -5,23 +5,46 @@ import { dom } from '@fortawesome/fontawesome-svg-core'
 
 dom.watch()
 
-export const EspecificProducts = () => {
+export const EspecificProducts = ({article}) => {
+
+    const keywords = article.palabrasClave.split(' ');
+
+    let rowsKeywords = [];
+    for (let i = 0; i < keywords.length; i++) {
+        rowsKeywords.push(
+            <button key={i} className="btn btn-primary">{keywords[i]}</button>
+        )
+    }
+
+    let rowsCalificationFas = [];
+    for (let i = 0; i < article.calificacion; i++) {
+        rowsCalificationFas.push(
+            <i className="fas fa-star" key={i}></i>
+        )
+    }
+
+    let rowsCalificationFar = [];
+    for (let i = article.calificacion; i < 5; i++) {
+        rowsCalificationFar.push(
+            <i className="far fa-star" key={i}></i>
+        )
+    }
+
     return (
         <div>
             <main className="body">
       
                 <div className="information">
-                    <img src={`./images/new article five.jpg`} alt="" />
+                    <img src={article.image} alt="" />
                     <div className="description">
                         <div className="info">
-                            <span className="date">Creation date</span>
-                            <h2>Product's name</h2>
-                            <p>Full description</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, maiores!</p>
+                            <span className="date">{article.CreationDate}</span>
+                            <h2>{article.productName}</h2>
+                            <p>{article.descripcionCorta}</p>
+                            <p>{article.descripcionLarga}</p>
                         </div>
                         <div className="botones">
-                            <button className="btn btn-primary">keyword</button>
-                            <button className="btn btn-primary">category</button>
+                            {rowsKeywords}
                         </div>
                     </div>
                 </div>
@@ -31,11 +54,12 @@ export const EspecificProducts = () => {
                         <span>Average</span>
                         <p>2.5%</p>
                         <div className="calification-stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
+                            {
+                                <>
+                                    {rowsCalificationFas}
+                                    {rowsCalificationFar}
+                                </>
+                            }
                         </div>
                     </div>
 
