@@ -2,7 +2,7 @@ import React from 'react'
 import { Footer } from '../components/Landing/Footer'
 import { EspecificProducts } from '../components/ProductPage/EspecificProducts'
 
-export const EspecificProduct = () => {
+export const EspecificProductPage = () => {
     return (
         <div>
             <EspecificProducts />

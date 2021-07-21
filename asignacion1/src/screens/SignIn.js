@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux"
-import { startGoogleLogin } from '../action/auth';
+import { startFacebookLogin, startGoogleLogin } from '../action/auth';
 
 import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
@@ -27,8 +27,7 @@ export const SignIn = () => {
     }
 
     const handleSignInFacebook = () => {
-        /* dispatch( startFacebookLogin() ); */
-        console.log('hola facebook')
+        dispatch( startFacebookLogin() );
     }
 
     return (

@@ -10,7 +10,7 @@ import '../../styles/css/Innecesary/styles.css'
 export const Navbar = () => {
 
     let history = useHistory();
-    console.log(history.location.pathname);
+    // console.log(history.location.pathname);
 
     const dispatch = useDispatch();
     const state = useSelector(state => state?.auth)

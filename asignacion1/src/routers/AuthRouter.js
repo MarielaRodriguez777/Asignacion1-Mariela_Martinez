@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { Category } from '../screens/Category'
-import { EspecificProduct } from '../screens/EspecificProduct'
+import { EspecificProductPage } from '../screens/EspecificProductPage'
 import { Landing } from '../screens/Landing'
 import { ProductPage } from '../screens/ProductPage'
 import { SignIn } from '../screens/SignIn'
@@ -50,7 +50,7 @@ export const AuthRouter = () => {
                     <PrivateRouters
                         exact
                         path="/screens/especificProduct"
-                        component={EspecificProduct}
+                        component={EspecificProductPage}
                         isAuthenticated={isLoggedIn}
                     />
                     <Route
