@@ -1,7 +1,6 @@
 import React from "react";
 
 export const CategoryComponent = ({ category }) => {
-  console.log(category);
   return (
     <>
       <div className="category-item">

@@ -6,8 +6,6 @@ import { CategoryComponent } from './CategoryComponent'
 
 export const Categories = () => {
     const {categorias} = useSelector(state => state.categorias);
-
-    console.log(categorias)
     return (
         <div>
             <main className="main_main" >
