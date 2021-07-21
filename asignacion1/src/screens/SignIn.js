@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux"
@@ -8,11 +8,15 @@ import '../styles/css/SignIn/btn.css'
 import '../styles/css/SignIn/signIn.css'
 import '../styles/css/SignIn/social-btn.css'
 import '../styles/css/Innecesary/styles.css'
+import { setRutas } from '../action/rutas';
 
 
 export const SignIn = () => {
-    let history = useHistory();
     const dispatch = useDispatch();
+    let history = useHistory();
+    useEffect(() => {
+        dispatch(setRutas(history.location.pathname))
+    }, [dispatch, history.location.pathname])
 
     const handleSubmit = (e) => {
         e.preventDefault();

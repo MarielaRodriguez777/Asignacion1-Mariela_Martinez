@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from '../../action/auth';
 
@@ -8,12 +8,9 @@ import '../../styles/css/Innecesary/styles.css'
 
 
 export const Navbar = () => {
-
-    let history = useHistory();
-    // console.log(history.location.pathname);
-
-    const dispatch = useDispatch();
+    const ruta = useSelector(state => state.rutas)
     const state = useSelector(state => state?.auth)
+    const dispatch = useDispatch();
     
     const handleLogout = () => {
         dispatch( startLogout() )
@@ -21,7 +18,7 @@ export const Navbar = () => {
     return (
         <>
         {
-            history.location.pathname==="/screens/signUp" || history.location.pathname==="/screens/signIn"
+            ruta==="/screens/signUp" || ruta==="/screens/signIn"
             ?
             <>
             </>
