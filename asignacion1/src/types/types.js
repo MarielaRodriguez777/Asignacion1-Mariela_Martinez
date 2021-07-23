@@ -5,5 +5,7 @@ export const types = {
     articlesLoad: '[articles] load articles',
     categoriasLoad: '[categorias] load categorias',
     updateRuta: '[rutas] update ruta',
-    selectCategoria: '[SC] select categoria'
+    selectCategoria: '[SC] select categoria',
+    setFilter: '[filter] set filter',
+    setOrder: '[order] set order',
 }

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 export const ViewProducts = ({article}) => {
   const history = useHistory();
+
   const handleSeeMore = () =>{
     history.push(`/screens/especificProduct/${article.id}`);
   }
@@ -15,7 +16,7 @@ export const ViewProducts = ({article}) => {
           alt=""
         />
         <h4>{article.productName.substr(0,15)}</h4>
-        <span>{article.descripcionCorta.substr(0,15)}</span>
+        <span>{article.descripcionCorta.substr(0,30)+"..."}</span>
       </div>
       <div className="seeMore">
         <span onClick={handleSeeMore}>See more</span>

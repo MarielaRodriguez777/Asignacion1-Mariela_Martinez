@@ -4,6 +4,7 @@ import { articlesReducer } from '../reducers/articlesReducers';
 
 import { authReducer } from '../reducers/authReducer';
 import { categoriasReducer } from '../reducers/catogoriasReducers';
+import { filterReducer } from '../reducers/filterReducer';
 import { rutasReducer } from '../reducers/rutasReducers';
 import { selectCategoriaReducer } from '../reducers/selectCatogoriaReducer';
 
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     categorias: categoriasReducer,
     rutas: rutasReducer,
     categoria: selectCategoriaReducer,
+    filter: filterReducer,
 });
 
 
