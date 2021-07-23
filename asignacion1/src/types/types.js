@@ -4,5 +4,6 @@ export const types = {
     logOut: '[auth] logOut',
     articlesLoad: '[articles] load articles',
     categoriasLoad: '[categorias] load categorias',
-    updateRuta: '[rutas] update ruta'
+    updateRuta: '[rutas] update ruta',
+    selectCategoria: '[SC] select categoria'
 }

@@ -42,7 +42,26 @@
     justify-items: center;
     margin: auto 0;
 }
-
+.grid-product .tarjet{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.grid-product .tarjet .generalInfo{
+    display: flex;
+    flex-direction: column;
+}
+.grid-product .tarjet .seeMore{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.grid-product .tarjet .seeMore span{
+    color: #F99355;
+}
+.grid-product .tarjet .seeMore span:hover{
+    cursor: pointer;
+}
 .product {
     width: 100%;
     padding: 20px;
@@ -54,7 +73,6 @@
 .tarjet{
     border: 1px solid black;
     width: 80%;
-    height: 80%;
     border-radius: 1rem;
     padding: .5rem;
     background: linear-gradient(to bottom, rgba(227,92,10,50%), #ffffff);

@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useSelector } from 'react-redux'
 
 import '../../styles/css/paginacion/paginacion.css'
 import '../../styles/css/product/product.css'
 import '../../styles/css/Innecesary/styles.css'
 import '../../styles/css/index/index.css'
+import { ViewProducts } from './ViewProducts'
 
 
 export const Product = () => {
+    const state = useSelector(state => state.articles)
+    const filtrarRef = useRef(true);
+    const articles = [
+        ...state.articles.map(art => art),
+        ...state.bestHighers.map(art => art),
+        ...state.offers.map(art => art)
+    ]
+    const handleFiltrar = () => {
+        const value = filtrarRef.current.options[filtrarRef.current.options.selectedIndex].value;
+        console.log(value)
+    }
+    
     return (
         <div>
             <main className="main_main">
@@ -21,11 +35,16 @@ export const Product = () => {
                                         <span>
                                             <h4>Category:</h4>
                                         </span>
-                                        <select name="select">
-                                            <option defaultValue="">Elige una opción</option>
-                                            <option defaultValue="value1">Value 1</option>
-                                            <option defaultValue="value2">Value 2</option>
-                                            <option defaultValue="value3">Value 3</option>
+                                        <select
+                                            id="filtrar"
+                                            name="filtro"
+                                            onChange={handleFiltrar}
+                                            ref={filtrarRef}
+                                        >
+                                            <option defaultValue="default">Elige una categoria</option>
+                                            <option defaultValue="categoria1">categoria1</option>
+                                            <option defaultValue="categoria2">categoria2</option>
+                                            <option defaultValue="categoria3">categoria3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -47,72 +66,18 @@ export const Product = () => {
                                     <span>
                                         <h4>Keyword:</h4>
                                     </span>
-                                    <input type="text" className="etiqueta" name="cantidad" id="cantidad" placeholder="Etiqueta" readonly="readonly" />
+                                    <input type="text" className="etiqueta" name="cantidad" id="cantidad" placeholder="Etiqueta" />
                                 </div>
                             </div>
 
                         </div>
                         <div className="product">
                             <div className="grid-product">
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                                <div className="tarjet">
-                                    <img className="product-image" src={`./images/new article five.jpg`} alt="" />
-                                    <h3>Name Product</h3>
-                                    <span><h4>Lorem ipsum dolor sit amet.</h4></span>
-                                    <a href="url">See more</a>
-                                </div>
-                            </div>
-                            <div>
-                                <section className="paginacion">
-                                    <ul>
-                                        <li><a href="pagina1.html" className="active">1</a></li>
-                                        <li><a href="pagina2.html">2</a></li>
-                                        <li><a href="pagina3.html">3</a></li>
-                                        <li><a href="pagina4.html">4</a></li>
-                                        <li><a href="pagina5.html">5</a></li>
-                                    </ul>
-                                </section>
+                                {
+                                    articles.map(art => {
+                                        return <ViewProducts key={art.id} article={art} />
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
