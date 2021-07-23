@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import '../../styles/css/especific-product/especific-product.css'
 import '../../styles/css/Innecesary/styles.css'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import { setComentario } from '../../action/comentario'
+import { db } from '../../firebase/firebase-config'
+import { ComentaryCommponet } from './ComentaryCommponet'
 
 dom.watch()
 
 export const EspecificProducts = ({article}) => {
-
+    const dispatch = useDispatch();
+    const history = useHistory();
     const keywords = article.palabrasClave.split(' ');
+    const {name:userName, photo:userPhoto} = useSelector(state => state.auth)
+    let comentarios = useSelector(state => state.comentarios)
+    const [formState, setFormState] = useState({
+        comentValue: ''
+    })
+    const { comentValue } = formState;
+    comentarios = comentarios.filter(com => com.idArticle===article.id)
 
     let rowsKeywords = [];
     for (let i = 0; i < keywords.length; i++) {
@@ -28,6 +41,44 @@ export const EspecificProducts = ({article}) => {
         rowsCalificationFar.push(
             <i className="far fa-star" key={i}></i>
         )
+    }
+
+    const handleInputChange = ({target}) =>{
+        setFormState({
+            ...formState,
+            [target.name]: target.value
+        })
+    }
+
+    const handleComent = async(e) => {
+        e.preventDefault();
+        if(!userName){
+            history.push("/screens/signIn")
+        }else if(formState.comentValue){
+            let newComentario = {
+                idArticle: article.id,
+                comentario: formState.comentValue,
+                calificacion: 5,
+                user: {
+                    name: userName,
+                    photo: userPhoto
+                }
+            }
+
+            const doc = await db.collection('comentarios').add(newComentario)
+            newComentario = {
+                id: doc.id,
+                idArticle: article.id,
+                comentario: formState.comentValue,
+                calificacion: 5,
+                user: {
+                    name: userName,
+                    photo: userPhoto
+                }
+            }
+
+            dispatch( setComentario(newComentario) );
+        }
     }
 
     return (
@@ -128,7 +179,15 @@ export const EspecificProducts = ({article}) => {
                     </div>
 
                 </div>
-                
+                <div className="commentarys">
+                    {
+                        comentarios.map(com => {
+                            return <ComentaryCommponet key={com.id} comentario={com} />
+                        })
+                    }
+
+                </div>
+
                 <div className="commentary">
                     
                     <div className="commentary-header">
@@ -142,8 +201,8 @@ export const EspecificProducts = ({article}) => {
                             <img src={`./images/user.png`} alt="" />
                         </div>
                         <div className="commentary-comment">
-                            <input type="text" placeholder="Write your comment..." />
-                            <button className="btn btn-primary">Send</button>
+                            <input type="text" placeholder="Write your comment..." id="coment" name="comentValue" value={comentValue} onChange={handleInputChange} />
+                            <button className="btn btn-primary" onClick={handleComent}>Send</button>
                         </div>
                     </div>
                 </div>

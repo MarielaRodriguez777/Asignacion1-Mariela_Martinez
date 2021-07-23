@@ -8,4 +8,6 @@ export const types = {
     selectCategoria: '[SC] select categoria',
     setFilter: '[filter] set filter',
     setOrder: '[order] set order',
+    setComentario: '[comentario] set comentario',
+    showComentarios: '[comentario] show comentarios'
 }

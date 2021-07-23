@@ -10,6 +10,8 @@ import { setArticles } from "../action/articles";
 import { loadArticlesFirebase} from "../helpers/loadArticlesFirebase";
 import { loadCategorias } from "../helpers/loadCategorias";
 import { setCategorias } from "../action/categorias";
+import { showComentarios } from "../action/comentario";
+import { loadComents } from "../helpers/loadComents";
 
 export const AppRouter = () => {  
 
@@ -22,6 +24,7 @@ export const AppRouter = () => {
 
             dispatch(setArticles(await loadArticlesFirebase()));
             dispatch(setCategorias(await loadCategorias()));
+            dispatch(showComentarios(await loadComents()));
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName, user.photoURL));
             }
