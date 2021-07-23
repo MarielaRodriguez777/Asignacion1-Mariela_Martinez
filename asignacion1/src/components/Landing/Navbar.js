@@ -66,6 +66,8 @@ export const Navbar = () => {
                             </>
                             :<>
                                 <button id="logOut" className="btn btn-color" onClick={handleLogout}>LogOut</button>
+                                <span>{state.name}</span>
+                                <img style={{width:"50px", height:"50px", borderRadius:"25px"}} src={state.photo} alt="profile" />
                             </>
                         }
                     </div>

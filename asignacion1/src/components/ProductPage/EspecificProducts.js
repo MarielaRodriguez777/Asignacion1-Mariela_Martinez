@@ -35,15 +35,16 @@ export const EspecificProducts = ({article}) => {
             <main className="body">
       
                 <div className="information">
-                    <img src={article.image} alt="" />
+                    <img className="zoom" src={article.image} alt="" />
                     <div className="description">
                         <div className="info">
-                            <span className="date">{article.CreationDate}</span>
-                            <h2>{article.productName}</h2>
+                            <span className="date">{article.creationDate}</span>
+                            <h1>{article.productName}</h1>
                             <p>{article.descripcionCorta}</p>
                             <p>{article.descripcionLarga}</p>
                         </div>
                         <div className="botones">
+                            <span><h2><b>Tags:</b></h2></span>
                             {rowsKeywords}
                         </div>
                     </div>
