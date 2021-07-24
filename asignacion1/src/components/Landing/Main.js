@@ -18,7 +18,6 @@ export const Main = () => {
                         <div className="new-articles design lineas">
                             <div className="head-articles">
                                 <span className="bold">New Articles</span>
-                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 {
@@ -31,7 +30,6 @@ export const Main = () => {
                         <div className="best-articles">
                             <div className="head-articles">
                                 <span className="bold">Best Highers</span>
-                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 { 
@@ -43,7 +41,6 @@ export const Main = () => {
 
                             <div className="head-articles">
                                 <span className="bold">Offers</span>
-                                <a href="url">See more</a>
                             </div>
                             <div className="grid-articles">
                                 {
