@@ -23,7 +23,7 @@ export const Product = () => {
     let articles = [
         ...state.articles.map(art => art),
         ...state.bestHighers.map(art => art),
-        ...state.offers.map(art => art)
+        ...state.offers.map(art => art),
     ]
 
     if (filterState.categoria !== "default"){
@@ -135,12 +135,12 @@ export const Product = () => {
                                         <option value="Less">Less</option>
                                     </select>
                                 </div>
-                                <div className="inline"> 
+                                {/* <div className="inline"> 
                                     <span>
                                         <h4>Keyword:</h4>
                                     </span>
                                     <input type="text" className="etiqueta" name="cantidad" id="cantidad" placeholder="Etiqueta" />
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>

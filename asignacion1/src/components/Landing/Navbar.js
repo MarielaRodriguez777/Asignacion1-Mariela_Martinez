@@ -26,9 +26,13 @@ export const Navbar = () => {
             <header>
 
                 <nav className="header">
-                
+                    <NavLink
+                        exact
+                        to="/screens/landing"
+                    >
+                        <img src={`./images/appland.png`} className="logo" alt=""/>
+                    </NavLink>
                     
-                    <img src={`./images/appland.png`} alt=""/>
                 
                     <NavLink
                         exact

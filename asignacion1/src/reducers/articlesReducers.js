@@ -14,6 +14,7 @@ export const articlesReducer = ( state=initialState, action ) =>{
                 articles: action.payload.filter(art=> art.catalogo==='new'),
                 bestHighers: action.payload.filter(art=> art.catalogo==='best'),
                 offers: action.payload.filter(art=> art.catalogo==='offer'),
+                entradas: action.payload.filter(art=> art.catalogo===' ')
             };
 
         default:

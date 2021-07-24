@@ -15,8 +15,8 @@ export const ViewProducts = ({article}) => {
           src={article.image}
           alt=""
         />
-        <h4>{article.productName.substr(0,15)}</h4>
-        <span>{article.descripcionCorta.substr(0,30)+"..."}</span>
+        <h4>{article.productName}</h4>
+        <span>{article.descripcionCorta}</span>
       </div>
       <div className="seeMore">
         <span onClick={handleSeeMore}>See more</span>

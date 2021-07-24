@@ -9,6 +9,7 @@ export const ComentaryCommponet = ({comentario}) => {
       <div className="divComment">
         <div className="commentName">
           <h2>{comentario.user.name}</h2>
+          <hr/>
         </div> 
         <div className="commentTxt">
           <p>{comentario.comentario}</p>
