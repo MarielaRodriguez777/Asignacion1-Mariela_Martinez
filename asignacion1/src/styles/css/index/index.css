@@ -74,6 +74,18 @@
     margin: auto 0;
 }
 
+.tamaño{
+    width: 100%;
+}
+
+.tamaño>img{
+    width: 21vh;
+    height: 23vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    object-fit: cover
+}
+
 .main_main .servicios{
     border-top: 1px solid #333;
     display: flex;
@@ -103,7 +115,7 @@ footer{
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    gap: 8%;
 }
 
 .bold {

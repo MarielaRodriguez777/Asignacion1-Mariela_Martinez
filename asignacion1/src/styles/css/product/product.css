@@ -50,6 +50,7 @@
 .grid-product .tarjet .generalInfo{
     display: flex;
     flex-direction: column;
+    gap:20px;
 }
 .grid-product .tarjet .seeMore{
     display: flex;
@@ -72,7 +73,7 @@
 
 .tarjet{
     border: 1px solid black;
-    width: 80%;
+    width: 200px;
     border-radius: 1rem;
     padding: .5rem;
     background: linear-gradient(to bottom, rgba(227,92,10,50%), #ffffff);
@@ -84,8 +85,8 @@
 }
 
 .product-image{
-    width: 50%;
-    height: 50%;
+    width: 20vh;
+    height: 20vh;
     border-radius: 1rem;
     border:black 1px solid
 }

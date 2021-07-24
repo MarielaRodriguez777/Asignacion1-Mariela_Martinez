@@ -21,13 +21,13 @@ export const Footer = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni necessitatibus maiores, magnam quasi provident sunt!</p>
                 </div>
                 <div>
-                    <p>Number</p>
-                    <p>Email</p>
-                    <p>Address</p>
-                    <p>Date</p>
+                    <p><i class="fas fa-phone"></i> Phone: +50422202220</p>
+                    <p><i class="fas fa-envelope-open-text"></i>    Email: makeup@gmail.com</p>
+                    <p><i class="fas fa-address-card"></i>  Address: Lomas del Guijarro</p>
+                    <p><i class="fas fa-table"></i> Date</p>
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p><i class="fas fa-copyright"></i> All rights reserved</p>
                 </div>
                 <div>
                     <div className="size">

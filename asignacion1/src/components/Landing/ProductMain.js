@@ -8,7 +8,9 @@ export const ProductMain = ({article}) => {
     }
     return (
         <>
-            <img src={`${article.image}`} alt="" onClick={handleArticle} />
+            <div className="tamaño">
+                <img src={`${article.image}`} alt="" onClick={handleArticle} />
+            </div>
         </>
     )
 }
