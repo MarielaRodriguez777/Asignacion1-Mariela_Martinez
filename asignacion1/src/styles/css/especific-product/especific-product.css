@@ -28,14 +28,17 @@ body{
 
 .information{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     padding: 30px 70px;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 10px;
+    justify-items: center;
 }
+
 .information > img{
-    width: 40vh;
-    height: 40vh;
+    width: 400px;
+    height: 400px;
     border: 0px #000 solid;
     border-radius: 20px;
 }
@@ -79,8 +82,7 @@ body{
 
 .calification{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px #000 solid;
+    grid-template-columns: repeat(1, 1fr);
     box-sizing: border-box;
 }
 .average{
@@ -88,17 +90,15 @@ body{
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-
-    justify-content: space-between;
     justify-items: center;
-    align-items: center;
+    align-items: flex-end;
 }
 .average span{
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 .average p{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .line{
@@ -127,7 +127,7 @@ body{
     justify-self: stretch;
 }
 .star-porcentage .calification-stars > i{
-    font-size: 18px;
+    font-size: 10px;
 }
 .star-porcentage{
     display: flex;
@@ -176,14 +176,7 @@ body{
     align-self: flex-end;
     width: 100px;
 }
-
-.zoom {
-    transition: transform .2s; 
-}
  
-.zoom:hover {
-    transform: scale(1.5); 
-}
 
 .commentarys{
     display: flex;
@@ -192,7 +185,6 @@ body{
     border-top: 1px solid;
     padding: 20px 0px;
     box-sizing: border-box;
-    margin: 5rem 0rem;
 }
 
 .commentarys .commentaryIndividual{

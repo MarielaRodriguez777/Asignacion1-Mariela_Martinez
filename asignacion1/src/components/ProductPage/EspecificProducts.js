@@ -86,7 +86,7 @@ export const EspecificProducts = ({article}) => {
             <main className="body">
       
                 <div className="information">
-                    <img className="zoom" src={article.image} alt="" />
+                    <img src={article.image} alt="" />
                     <div className="description">
                         <div className="info">
                             <span className="date">{article.creationDate}</span>
@@ -94,91 +94,28 @@ export const EspecificProducts = ({article}) => {
                             <p>{article.descripcionCorta}</p>
                             <p>{article.descripcionLarga}</p>
                         </div>
+                        <div className="average">
+                            <span>Calificación</span>
+                            <div className="calification-stars">
+                                {
+                                    <>
+                                        {rowsCalificationFas}
+                                        {rowsCalificationFar}
+                                    </>
+                                }
+                            </div>
+                        </div>
                         <div className="botones">
                             <span><h2><b>Tags:</b></h2></span>
                             {rowsKeywords}
                         </div>
                     </div>
-                </div>
-
-                <div className="calification">            
-                    <div className="average">
-                        <span>Average</span>
-                        <p>2.5%</p>
-                        <div className="calification-stars">
-                            {
-                                <>
-                                    {rowsCalificationFas}
-                                    {rowsCalificationFar}
-                                </>
-                            }
-                        </div>
-                    </div>
-
-                    <div className="line">
-                        <div className="line-item line-item5"></div>
-                        <div className="line-item line-item4"></div>
-                        <div className="line-item line-item3"></div>
-                        <div className="line-item line-item2"></div>
-                        <div className="line-item line-item1"></div>
-                    </div>
-
-                    <div className="star">
+                    <div className="calification">            
                     
-                        <div className="star-porcentage">
-                            <div className="calification-stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            </div>
-                            <span>80%</span>
-                        </div>
-                        <div className="star-porcentage">
-                            <div className="calification-stars">
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="far fa-star"></i>
-                                <i className="far fa-star"></i>
-                            </div>
-                            <span>80%</span>
-                        </div>
-                        <div className="star-porcentage">
-                            <div className="calification-stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            </div>
-                            <span>80%</span>
-                        </div>
-                        <div className="star-porcentage">
-                            <div className="calification-stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            </div>
-                            <span>80%</span>
-                        </div>
-                        <div className="star-porcentage">
-                            <div className="calification-stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            </div>
-                            <span>80%</span>
-                        </div>
-
-                    </div>
-
                 </div>
+                </div>
+
+                
                 <div className="commentarys">
                     {
                         comentarios.map(com => {
