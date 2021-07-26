@@ -19,7 +19,8 @@ export const EspecificProductPage = () => {
     const articles = [
         ...state.articles.map(art => art),
         ...state.bestHighers.map(art => art),
-        ...state.offers.map(art => art)
+        ...state.offers.map(art => art),
+        ...state.others.map(art => art)
     ]
     const article = articles.find(art => art.id===idProducto)
 

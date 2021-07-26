@@ -24,6 +24,7 @@ export const Product = () => {
         ...state.articles.map(art => art),
         ...state.bestHighers.map(art => art),
         ...state.offers.map(art => art),
+        ...state.others.map(art => art)
     ]
 
     if (filterState.categoria !== "default"){
