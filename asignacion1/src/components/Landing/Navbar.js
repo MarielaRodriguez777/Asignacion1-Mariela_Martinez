@@ -1,17 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from '../../action/auth';
 
 import '../../styles/css/Innecesary/header.css'
 import '../../styles/css/Innecesary/styles.css'
+import { searchChange } from '../../action/search';
 
 
 export const Navbar = () => {
     const ruta = useSelector(state => state.rutas)
     const state = useSelector(state => state?.auth)
+    const [formState, setFormState] = useState({
+        searchValue:''
+    })
     const dispatch = useDispatch();
     
+    const {searchValue} = formState;
+
+    useEffect(() => {
+        if (formState.searchValue.length >= 3) {
+            dispatch(searchChange(formState.searchValue))
+        }else{
+            dispatch(searchChange(''))
+        }
+    }, [formState, dispatch])
+
+    const handleInputChange = ({target}) => {
+        setFormState({
+            ...formState,
+            [target.name]: target.value
+        })
+    }
+
     const handleLogout = () => {
         dispatch( startLogout() )
     }
@@ -49,7 +70,16 @@ export const Navbar = () => {
                         <p id="shopping">Shopping</p>
                     </NavLink>
                     
-                    <input type="search" defaultValue="" placeholder="&#xf002; Search" id="icon" className="icono" />
+                    <input 
+                        type="search"
+                        maxLength="255"
+                        placeholder="&#xf002; Search" 
+                        id="icon" 
+                        className="icono"
+                        name="searchValue"
+                        value={searchValue}
+                        onChange={handleInputChange} 
+                    />
 
 
                     <div id="sign">

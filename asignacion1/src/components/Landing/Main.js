@@ -7,7 +7,20 @@ import { ProductMain } from './ProductMain'
 
 
 export const Main = () => {
-    const state = useSelector(state => state.articles)
+    const stateArticles = useSelector(state => state.articles)
+    const search = useSelector(state => state.search)
+    let listArticles = {
+        articles: [...stateArticles.articles],
+        bestHighers: [...stateArticles.bestHighers],
+        offers: [...stateArticles.offers],
+        others: [...stateArticles.others],
+    }
+    if (search) {
+        listArticles.articles = [...listArticles.articles.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
+        listArticles.bestHighers = [...listArticles.bestHighers.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
+        listArticles.offers = [...listArticles.offers.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
+        listArticles.others = [...listArticles.others.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
+    }
     return (
         <div>
             <main className="main_main">
@@ -21,7 +34,7 @@ export const Main = () => {
                             </div>
                             <div className="grid-articles">
                                 {
-                                    state.articles.map(art => {
+                                    listArticles.articles?.map(art => {
                                         return <ProductMain key={art.id} article={art} />
                                     })
                                 }
@@ -33,7 +46,7 @@ export const Main = () => {
                             </div>
                             <div className="grid-articles">
                                 { 
-                                    state.bestHighers.map(art => {
+                                    listArticles.bestHighers?.map(art => {
                                         return <ProductMain key={art.id} article={art} />
                                     })
                                 }
@@ -44,7 +57,7 @@ export const Main = () => {
                             </div>
                             <div className="grid-articles">
                                 {
-                                    state.offers.map(art => {
+                                    listArticles.offers?.map(art => {
                                         return <ProductMain key={art.id} article={art} />
                                     })
                                 }

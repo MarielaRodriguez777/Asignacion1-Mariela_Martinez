@@ -7,6 +7,7 @@ import { categoriasReducer } from '../reducers/catogoriasReducers';
 import { comentarioReducer } from '../reducers/comentarioReducer';
 import { filterReducer } from '../reducers/filterReducer';
 import { rutasReducer } from '../reducers/rutasReducers';
+import { searchReducer } from '../reducers/searchReducer';
 import { selectCategoriaReducer } from '../reducers/selectCatogoriaReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -19,6 +20,7 @@ const reducers = combineReducers({
     categoria: selectCategoriaReducer,
     filter: filterReducer,
     comentarios: comentarioReducer,
+    search: searchReducer,
 });
 
 

@@ -9,5 +9,6 @@ export const types = {
     setFilter: '[filter] set filter',
     setOrder: '[order] set order',
     setComentario: '[comentario] set comentario',
-    showComentarios: '[comentario] show comentarios'
+    showComentarios: '[comentario] show comentarios',
+    searchChange: '[search] search change',
 }

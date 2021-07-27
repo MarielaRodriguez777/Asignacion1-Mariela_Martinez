@@ -17,6 +17,7 @@ export const Product = () => {
     const { categorias } = useSelector(state => state.categorias)
     const filterState = useSelector(state => state.filter)
     const selectCategoriaState = useSelector(state => state.categoria)
+    const search = useSelector(state => state.search)
 
     const filtrarRef = useRef(true);
     const ordenarRef = useRef(true);
@@ -26,6 +27,9 @@ export const Product = () => {
         ...state.offers.map(art => art),
         ...state.others.map(art => art)
     ]
+    if (search) {
+        articles = [...articles.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
+    }
 
     if (filterState.categoria !== "default"){
         articles = articles.filter(art => art.categoria === filterState.categoria);
