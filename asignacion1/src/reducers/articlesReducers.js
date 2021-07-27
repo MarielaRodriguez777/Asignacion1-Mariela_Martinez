@@ -10,7 +10,6 @@ export const articlesReducer = ( state=initialState, action ) =>{
     switch (action.type) {
 
         case types.articlesLoad:
-            console.log(action.payload)
             return {
                 articles: [...action.payload.filter(art=> art.catalogo==='new')],
                 bestHighers:[...action.payload.filter(art=> art.catalogo==='best')],

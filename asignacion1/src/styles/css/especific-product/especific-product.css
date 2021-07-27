@@ -18,12 +18,12 @@ body{
 }
 
 .fas.fa-star{
-    color: rgb(240, 240, 4);
+    color: rgb(253, 253, 53);
 }
 
 .fas.fa-star,
 .far.fa-star{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .information{

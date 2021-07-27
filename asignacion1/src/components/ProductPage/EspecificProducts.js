@@ -7,7 +7,6 @@ import { dom } from '@fortawesome/fontawesome-svg-core'
 import { setComentario } from '../../action/comentario'
 import { db } from '../../firebase/firebase-config'
 import { ComentaryCommponet } from './ComentaryCommponet'
-import StarRating from '../starRating/StarRating'
 
 dom.watch()
 
@@ -97,15 +96,14 @@ export const EspecificProducts = ({article}) => {
                         </div>
                         <div className="average">
                             <span>Calificación</span>
-                            {/* <div className="calification-stars">
+                            <div className="calification-stars">
                                 {
                                     <>
                                         {rowsCalificationFas}
                                         {rowsCalificationFar}
                                     </>
                                 }
-                            </div> */}
-                            <StarRating />
+                            </div>
                         </div>
                         <div className="botones">
                             <span><h2><b>Tags:</b></h2></span>

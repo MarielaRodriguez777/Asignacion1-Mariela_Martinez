@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import StarRating from "../starRating/StarRating";
 
 export const ViewProducts = ({ article }) => {
   const history = useHistory();
@@ -8,6 +7,16 @@ export const ViewProducts = ({ article }) => {
   const handleSeeMore = () => {
     history.push(`/screens/especificProduct/${article.id}`);
   };
+
+  let rowsCalificationFas = [];
+  for (let i = 0; i < article.calificacion; i++) {
+    rowsCalificationFas.push(<i className="fas fa-star" key={i}></i>);
+  }
+
+  let rowsCalificationFar = [];
+  for (let i = article.calificacion; i < 5; i++) {
+    rowsCalificationFar.push(<i className="far fa-star" key={i}></i>);
+  }
   return (
     <>
       {/* <div className="tarjet">
@@ -23,11 +32,7 @@ export const ViewProducts = ({ article }) => {
 
       <div className="cardProduct">
         <div className="card-image">
-          <img
-            className="card-image"
-            src={`${article.image}`}
-            alt=""
-          />
+          <img className="card-image" src={`${article.image}`} alt="" />
         </div>
         <div className="card-textProduct">
           <span className="date">{article.creationDate}</span>
@@ -38,7 +43,14 @@ export const ViewProducts = ({ article }) => {
         </div>
         <div className="nose">
           <div className="starProduct">
-            <StarRating />
+            <div className="calification-stars">
+              {
+                <>
+                  {rowsCalificationFas}
+                  {rowsCalificationFar}
+                </>
+              }
+            </div>
           </div>
           <div className="seeMoreButton">
             <span onClick={handleSeeMore}>See more</span>
