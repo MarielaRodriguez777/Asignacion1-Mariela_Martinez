@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import '../../styles/css/index/index.css'
 import '../../styles/css/Innecesary/main.css'
+import '../../styles/css/grid-card/grid-card.css'
 import {Banner} from './Banner'
 import { ProductMain } from './ProductMain'
 

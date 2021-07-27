@@ -40,7 +40,6 @@
 
 .main_main .contenido .new-articles ,
 .main_main .contenido .best-articles{
-    width: 50%;
     padding: 20px 12px;
     gap: 20px;
     display: flex;
@@ -57,9 +56,10 @@
 .main_main .contenido .new-articles .grid-articles{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 60px 5px;
     justify-items: center;
-    margin: auto 0;
+    margin: 0.1rem;
 }
 
 .grid-articles:hover{
