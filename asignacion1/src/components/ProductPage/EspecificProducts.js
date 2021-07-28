@@ -8,42 +8,31 @@ import { setComentario } from '../../action/comentario'
 import { db } from '../../firebase/firebase-config'
 import { ComentaryCommponet } from './ComentaryCommponet'
 
-
 dom.watch()
 
 export const EspecificProducts = ({article}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const keywords = article.palabrasClave.split(' ');
-    const {name:userName, photo:userPhoto} = useSelector(state => state.auth)
-    let comentarios = useSelector(state => state.comentarios)
+
+
+
+    // Cargando el state
+    const {uid:userId, name:userName, photo:userPhoto} = useSelector(state => state.auth)
+    let comentariosState = useSelector(state => state.comentarios)
+    
+
+
+    // Formulario: estado del input
+    const [startCalificactionMouseMove, setStartCalificactionMouseMove] = useState(1);
+    const [startCalificaction, setStartCalificaction] = useState(1);
     const [formState, setFormState] = useState({
         comentValue: ''
     })
     const { comentValue } = formState;
-    comentarios = comentarios.filter(com => com.idArticle===article.id)
+    comentariosState = comentariosState.filter(com => com.idArticle===article.id)
 
-    let rowsKeywords = [];
-    for (let i = 0; i < keywords.length; i++) {
-        rowsKeywords.push(
-            <button key={i} className="btn btn-primary">{keywords[i]}</button>
-        )
-    }
-
-    let rowsCalificationFas = [];
-    for (let i = 0; i < article.calificacion; i++) {
-        rowsCalificationFas.push(
-            <i className="fas fa-star" key={i}></i>
-        )
-    }
-
-    let rowsCalificationFar = [];
-    for (let i = article.calificacion; i < 5; i++) {
-        rowsCalificationFar.push(
-            <i className="far fa-star" key={i}></i>
-        )
-    }
-
+    // Handles
     const handleInputChange = ({target}) =>{
         setFormState({
             ...formState,
@@ -53,14 +42,16 @@ export const EspecificProducts = ({article}) => {
 
     const handleComent = async(e) => {
         e.preventDefault();
+        let comentariosPorUsuario = comentariosState.filter(com => com.user.id===userId).length
         if(!userName){
             history.push("/screens/signIn")
-        }else if(formState.comentValue){
+        }else if(formState.comentValue && comentariosPorUsuario === 0){
             let newComentario = {
                 idArticle: article.id,
                 comentario: formState.comentValue,
-                calificacion: 5,
+                calificacion: parseFloat(startCalificaction),
                 user: {
+                    id: userId,
                     name: userName,
                     photo: userPhoto
                 }
@@ -71,25 +62,91 @@ export const EspecificProducts = ({article}) => {
                 id: doc.id,
                 idArticle: article.id,
                 comentario: formState.comentValue,
-                calificacion: 5,
+                calificacion: parseFloat(startCalificaction),
                 user: {
+                    id: userId,
                     name: userName,
                     photo: userPhoto
                 }
             }
 
             dispatch( setComentario(newComentario) );
+            setFormState({
+                comentValue: ''
+            });
+            setStartCalificaction(1)
+            setStartCalificactionMouseMove(1)
         }
     }
+    
+    const handleStartChange = ({target}) => {
+        setStartCalificaction(target.id)
+    }
+
+    const handleStartMouseMove = ({target}) => {
+        setStartCalificactionMouseMove(target.id)
+    }
+
+    const handleStartMouseOut = () => {
+        setStartCalificactionMouseMove(startCalificaction);
+    }
+
+
+
+    // Varaibles para renderizar la informacion general
+    let rowsKeywords = [];
+    for (let i = 0; i < keywords.length; i++) {
+        rowsKeywords.push(
+            <button key={i} className="btn btn-primary">{keywords[i]}</button>
+        )
+    }
+    
+    // Promedio de calificacion para el artiuclo
+    let averageCalification = 0;
+    if (comentariosState.length > 0){
+        comentariosState?.map(com => {
+            averageCalification = averageCalification + com.calificacion
+            return com
+        })
+        averageCalification = Math.round(averageCalification / comentariosState.length)
+    }
+
+    let rowsCalificationFas = [];
+    for (let i = 0; i < averageCalification; i++) {
+        rowsCalificationFas.push(
+            <i className="fas fa-star" key={i}></i>
+        )
+    }
+    let rowsCalificationFar = [];
+    for (let i = averageCalification; i < 5; i++) {
+        rowsCalificationFar.push(
+            <i className="far fa-star" key={i}></i>
+        )
+    }
+
+    //Variables para renderizar el input de comentarios
+    let rowsCalificationCommentFas = [];
+    for (let i = 1; i <= startCalificactionMouseMove; i++) {
+        rowsCalificationCommentFas.push(
+            <i onMouseEnter={handleStartMouseMove} onClick={handleStartChange} className="fas fa-star" id={i} key={i}></i>
+        )
+    }
+    let rowsCalificationCommentFar = [];
+    for (let i = parseFloat(startCalificactionMouseMove) + 1; i <= 5; i++) {
+        rowsCalificationCommentFar.push(
+            <i onMouseEnter={handleStartMouseMove} onClick={handleStartChange} className="far fa-star" id={i} key={i}></i>
+        )
+    }
+
+    /* useEffect(() => {
+        console.log('useEffect', startCalificaction)
+    }, [startCalificaction]) */
 
     return (
         <div>
             <main className="body">
-      
                 <div className="information">
-                    <div>
-                        <img className="imgProduct" src={article.image} alt="" />
-                    </div>
+                    <img src={article.image} alt="" />
                     <div className="description">
                         <div className="info">
                             <span className="date">{article.creationDate}</span>
@@ -121,7 +178,7 @@ export const EspecificProducts = ({article}) => {
                 
                 <div className="commentarys">
                     {
-                        comentarios.map(com => {
+                        comentariosState.map(com => {
                             return <ComentaryCommponet key={com.id} comentario={com} />
                         })
                     }
@@ -138,10 +195,29 @@ export const EspecificProducts = ({article}) => {
 
                         <div className="commentary-main">
                         <div className="commentary-img">
-                            <img src={`./images/user.png`} alt="" />
+                            <img src={ userId
+                                ? userPhoto
+                                : `./images/user.png`
+                            } alt="" />
                         </div>
                         <div className="commentary-comment">
-                            <input type="text" placeholder="Write your comment..." id="coment" name="comentValue" value={comentValue} onChange={handleInputChange} />
+                            <input
+                                type="text"
+                                placeholder="Write your comment..."
+                                id="coment"
+                                name="comentValue"
+                                value={comentValue}
+                                onChange={handleInputChange}
+                                maxLength="255"
+                            />
+                            <div className="calification-stars" id="starts-comment" onMouseOut={handleStartMouseOut}>
+                                {
+                                    <>
+                                        {rowsCalificationCommentFas}
+                                        {rowsCalificationCommentFar}
+                                    </>
+                                }
+                            </div>
                             <button className="btn btn-primary" onClick={handleComent}>Send</button>
                         </div>
                     </div>
