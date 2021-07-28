@@ -7,6 +7,8 @@ import { dom } from '@fortawesome/fontawesome-svg-core'
 import { setComentario } from '../../action/comentario'
 import { db } from '../../firebase/firebase-config'
 import { ComentaryCommponet } from './ComentaryCommponet'
+import { ModalView } from '../Modal/ModalView'
+
 
 dom.watch()
 
@@ -146,7 +148,10 @@ export const EspecificProducts = ({article}) => {
         <div>
             <main className="body">
                 <div className="information">
-                    <img src={article.image} alt="" />
+                    <div>
+                        <img className="imgProduct" src={article.image} alt="" />
+                        <ModalView article={article} />
+                    </div>
                     <div className="description">
                         <div className="info">
                             <span className="date">{article.creationDate}</span>
