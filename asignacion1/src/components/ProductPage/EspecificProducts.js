@@ -8,6 +8,7 @@ import { setComentario } from '../../action/comentario'
 import { db } from '../../firebase/firebase-config'
 import { ComentaryCommponet } from './ComentaryCommponet'
 
+
 dom.watch()
 
 export const EspecificProducts = ({article}) => {
@@ -86,7 +87,9 @@ export const EspecificProducts = ({article}) => {
             <main className="body">
       
                 <div className="information">
-                    <img src={article.image} alt="" />
+                    <div>
+                        <img className="imgProduct" src={article.image} alt="" />
+                    </div>
                     <div className="description">
                         <div className="info">
                             <span className="date">{article.creationDate}</span>
