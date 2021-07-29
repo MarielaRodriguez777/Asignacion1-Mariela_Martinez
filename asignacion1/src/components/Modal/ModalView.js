@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactCircleModal from 'react-circle-modal'
+import '../../styles/css/modal/modal.css'
+
 
 export const ModalView = ({article}) => {
   return (
     <ReactCircleModal
-      backgroundColor="transparent"
+      backgroundColor="none"
       filter="alpha(opacity=60)"
       toogleComponent={onClick => (
         <button onClick={onClick}>
-          Click here to open modal
+          Haga clic aquí para ampliar la imagen
         </button>
       )}
       // Optional fields and their default values
@@ -16,13 +18,13 @@ export const ModalView = ({article}) => {
       offsetY={0}
     >
       {(onClick) => (
-        <div style={{ backgroundColor: '#fff', padding: '1em', width:'100px' }}>
-          <p>
-            <img className="imgProduct" src={article.image} alt="" />
-          </p>
-          <button onClick={onClick}>
-            Click here to close modal
-          </button>
+        <div className="windowView">
+            <div className="boton">
+              <button onClick={onClick}>
+                <span>X</span>
+              </button>
+            </div>
+            <img src={article.imageZoom} alt="" />
         </div>
       )}
     </ReactCircleModal>
