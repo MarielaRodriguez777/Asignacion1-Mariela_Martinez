@@ -148,7 +148,7 @@ export const EspecificProducts = ({article}) => {
         <div>
             <main className="body">
                 <div className="information">
-                    <div style={{display:"flex", justifyContent:"center", flexDirection:"column"}}>
+                    <div className="imageContainer">
                         <img className="imgProduct" src={article.image} alt="" />
                         <ModalView article={article} />
                     </div>

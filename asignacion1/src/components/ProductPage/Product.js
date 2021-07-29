@@ -19,6 +19,7 @@ export const Product = () => {
     const filterState = useSelector(state => state.filter)
     const selectCategoriaState = useSelector(state => state.categoria)
     const search = useSelector(state => state.search)
+    let comentariosState = useSelector(state => state.comentarios)
 
     const filtrarRef = useRef(true);
     const ordenarRef = useRef(true);
@@ -28,6 +29,22 @@ export const Product = () => {
         ...state.offers.map(art => art),
         ...state.others.map(art => art)
     ]
+
+    // Actualizar la calificacion de cada articulo
+    articles.map(art => {
+        let comentariosCalification = comentariosState.filter(com => com.idArticle===art.id)
+        let averageCalification = 0;
+        if (comentariosCalification.length > 0){
+            comentariosCalification?.map(com => {
+                averageCalification = averageCalification + com.calificacion
+                return com
+            })
+            averageCalification = Math.round(averageCalification / comentariosCalification.length)
+        }
+        art.calificacion = averageCalification
+        return art
+    })
+
     if (search) {
         articles = [...articles.filter(art => art.productName.toLowerCase().includes(search.toLowerCase()))]
     }
